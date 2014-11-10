@@ -1,0 +1,25 @@
+public class LotteryNumbers {
+	public static void main(String[] args) {
+
+		int[] mainNumbers = new int[50];
+		int[] luckyDip = new int[11];
+
+		int i;
+
+		System.out.println("The main numbers that comprise the EuroMillions are: ");
+		
+		for (i = 0; i < mainNumbers.length; i++) {
+			mainNumbers[i] = i + 1;
+			System.out.println(mainNumbers[i]);
+					
+		}
+		
+		System.out.println();
+		System.out.println("The numbers that comprise the Lucky Dip are: ");
+		
+		for (i = 0; i < luckyDip.length; i++) {
+			luckyDip[i] = i + 1;
+			System.out.println(luckyDip[i]);
+		}
+	}
+}
