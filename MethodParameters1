@@ -25,5 +25,18 @@ public class MethodParameters {
 		sam.move("northwest", 188.2);
 		sam.liar("do the hustle", 437);
 		
+		// What name you give a () value in the method and what you call it in the calling code DO NOT need to
+		// be the same names.  All that matters is that the TYPE is the same:  string, int, double, etc...
+		// Examples:
+		
+		String greeting = "Hello there.";
+		sam.speak(greeting);
+		
+		// greeting = text because greeting is a STRING like text.
+		
+		int value = 14;
+		sam.jump(value);
+		
+		// value = height because value is an INT like height.
 	}
 }
