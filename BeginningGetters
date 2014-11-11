@@ -1,0 +1,57 @@
+class Person {
+	String name;
+	int age;
+
+	void speak() {
+		System.out.println("My name is " + name + ".");
+
+	}
+
+	// Using void to calculate years to retirement but not return a value:
+	// void calculateYearsToRetirement() {
+	// int yearsLeft = 65 - age;
+	// System.out.println("I have " + yearsLeft + " years until I retire.");
+	// System.out.println("Kill me now.  Please.");
+	// }
+
+	// To return a value - of type INT
+	int calculateYearsToRetirement() {
+		int yearsLeft = 65 - age;
+
+		return yearsLeft;
+	}
+
+	int getAge() {
+		return age;
+	}
+
+	String getName() {
+		return name;
+	}
+}
+
+public class Getters {
+	public static void main(String[] args) {
+
+		Person person1 = new Person();
+
+		person1.name = "Jim";
+		person1.age = 29;
+
+		person1.speak();
+
+		int years = person1.calculateYearsToRetirement();
+
+		System.out.println("I will not retire for " + years + " more years.");
+		System.out.println("Please kill me now.");
+		
+		int age = person1.getAge();
+		String name = person1.getName();
+		
+		System.out.println("My name is " + name + ".");
+		System.out.println("I am " + age + " years old.");
+		
+		
+
+	}
+}
