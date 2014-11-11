@@ -1,0 +1,29 @@
+class Robot {
+	public void speak(String text) {
+		System.out.println(text);
+	}
+	
+	public void jump(int height) {
+		System.out.println("I can jump " + height + " feet high!" );
+	}
+	
+	public void move(String direction, double distance) {
+		System.out.println("I can dance nonstop for " + distance + " miles.  I prefer to face " + direction + " when I do it.");
+	}
+	
+	public void liar(String lies, int amount) {
+		System.out.println("I have lied about my ability to " + lies + " over " + amount + " times. Sorry about that.");
+	}
+}
+
+public class MethodParameters {
+	public static void main(String[] args) {
+		
+		Robot sam = new Robot();
+		sam.speak("Hi, I'm Sam.");
+		sam.jump(21);
+		sam.move("northwest", 188.2);
+		sam.liar("do the hustle", 437);
+		
+	}
+}
