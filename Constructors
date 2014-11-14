@@ -1,0 +1,42 @@
+class Machine {
+	private String name;
+	private int code;
+	
+	// Constructors must have the same name as the name of the class, including
+	// capitalization.
+	// Constructors do not have any return types in their method.
+
+	public Machine() {
+		this("Arnold Rimmer", 0000); 
+		// Use "this" to call the contructor that fits these parameters.
+		// Must be first line of method.
+		
+		System.out.println("Constructor running!");
+	}
+	public Machine(String name) {
+		this("Arnold Rimmer", 0000); 
+		
+		System.out.println("Second Constructor running!");
+		this.name = name;
+	}
+	public Machine(String name, int code) {
+		System.out.println("Third Constructor running!");
+		this.name = name;
+		this.code = code;
+	}
+	
+}
+
+public class Constructors {
+	public static void main(String[] args) {
+
+		Machine machine1 = new Machine();
+
+		// You can also type just this to create new variable: new Machine();
+
+		new Machine("Bertie");
+
+		new Machine("Dave Lister", 3447);
+		
+	}
+}
