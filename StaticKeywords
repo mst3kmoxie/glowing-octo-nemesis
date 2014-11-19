@@ -1,0 +1,65 @@
+class Thing {
+	public final static int LUCKY_NUMBER = 15;
+	
+	public String name;
+	public static String description;
+	
+	public static int count = 0;
+	
+	public int id;
+	
+	public Thing() {
+		id = count;
+		
+		count++;
+	}
+	
+	public void showName() {
+		System.out.println("Object id: " + id + "; " + description + " " + "My name is " + name + ".");
+	}
+	
+	public static void showInfo() {
+		System.out.println(description);
+		
+		// Won't work: system.out.println(name);
+		// "name" is not in static class.
+		
+	}
+}
+public class StaticKeyword {
+	public static void main(String[] args) {
+		
+		Thing.description = "I am a thing.";
+		
+		// System.out.println(Thing.description);
+		
+		Thing.showInfo();
+	
+		System.out.println("Before creating objects, count is: " + Thing.count);
+		
+		Thing thing1 = new Thing();
+		Thing thing2 = new Thing();
+		
+		System.out.println("After creating objects, count is: " + Thing.count);
+		
+		thing1.name = "Bob";
+		thing2.name = "Sue";
+		
+		// System.out.println(thing1.name);
+		// System.out.println(thing2.name);
+		
+		thing1.showName();
+		thing2.showName();
+		
+		
+		System.out.println(Math.PI);
+		
+		// You cannot do this:  Math.PI = 3;
+		// Math.PI is a constant, and therefore cannot be reassigned.
+		// Constant values in Java are represented by all UPPERCASE letters.
+		
+		System.out.println(Thing.LUCKY_NUMBER);
+		
+		
+	}
+}
