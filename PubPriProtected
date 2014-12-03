@@ -1,0 +1,111 @@
+import world.Plant;
+
+// For instance variables:
+// Public: readable anywhere
+// Private: readable only within same class
+// Protected: readable within same class, subclass, and same package
+// No modifier/specifier:  readable within same package only
+
+// Classes cannot be private; no modifier makes class visible only within file.
+
+
+public class PubPriProtected {
+	public static void main(String[] args) {
+		
+		
+	Plant ivy = new Plant();
+	
+	System.out.println(ivy.name);
+	System.out.println(ivy.ID);
+	
+	// won't work because type is private.
+	// System.out.println(ivy.type);
+	
+	// wont' work: size is protected
+	// PubPriProtected not in same package as Plant
+	// System.out.println(ivy.size);
+	
+	// again, won't work because height is in different package
+	// height has package-level visibility
+	// System.out.println(ivy.height);
+	
+	
+	}
+}
+
+======================= Plant.java ==========================================
+
+package world;
+
+public class Plant {
+	
+	// Bad practice to made instance variable public
+	public String name;
+	
+	// Acceptable practice to use public because it is FINAL
+	public final static int ID = 317;
+	
+	private String type;
+	
+	protected String size;
+	
+	int height;
+	
+	public Plant() {
+		this.name = "Bella Begonia";
+		this.type = "plant";		
+		this.size = "medium";
+		this.height = 8;
+	}
+	
+}
+
+====================== Oak.java ===========================================
+
+package world;
+
+
+public class Oak extends Plant {
+
+	public Oak() {
+		
+		// won't work because type is private.
+		// type = "tree";
+		
+		// works because Oak extended the Plant class (Oak is a subclass of Plant)
+		this.size = "large";
+		
+		//No access specifier; works because Oak and Plant are in same package
+		this.height = 10;
+	}
+}
+
+==================== Field.java ===========================================
+
+package world;
+
+
+public class Field {
+	private Plant plant1 = new Plant();
+	
+	public Field() {
+		
+		//size is protected; Field is in same package as Plant
+		System.out.println(plant1.size);
+		
+	}
+}
+
+===================== Grass.java =========================================
+
+import world.Plant;
+
+
+public class Grass extends Plant  {
+		
+	public Grass() {
+		// won't work:
+		// Grass is not in same package as plant, even though it's a subclass.
+		// System.out.println(this.height);
+	}
+}
