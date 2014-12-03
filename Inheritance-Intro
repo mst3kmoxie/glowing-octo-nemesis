@@ -27,7 +27,7 @@ public class Inheritance {
 	}
 }
 
-// ========================= Addendum of Machine.class ================================
+// ========================= Machine.java ================================
 
 public class Machine {
 	
@@ -44,7 +44,7 @@ public class Machine {
 	
 }
 
-// ========================== Addendum of Car.class ====================================
+// ========================== Car.java ====================================
 
 public class Car extends Machine {
 	
