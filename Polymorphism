@@ -1,0 +1,65 @@
+
+public class Polymorphism {
+	public static void main(String[] args) {
+		
+		Plant plant1 = new Plant();
+		Tree tree1 = new Tree();
+		
+		// Two references to same object: plant2 and plant 1 are the SAME object.
+		Plant plant2 = plant1;
+		
+		// Polymorphism in action:  plant3 is a plant variable assigned to a tree variable name.
+		Plant plant3 = tree1;
+		
+		// a variable can be ANY name.  
+		Tree plant4 = new Tree();
+		
+		// plant2 was assigned to plant1, which was a Plant() object variable.  "Plant growing!"
+		plant2.grow();
+		
+		// plant3 was assigned to a Tree object variable name, so "Tree growing!"
+		plant3.grow();
+		
+		// shedLeaves is a Tree Object method, so only Tree Object variables can use this method.
+		// plant3.shedLeaves(); is an error, as plant3 is a Plant Object.
+		tree1.shedLeaves();
+		plant4.shedLeaves();
+		
+		doGrow (plant2);
+		doGrow(tree1);
+		
+	}	
+		public static void doGrow(Plant plant) {
+			plant.grow();
+			
+		}
+		
+		
+	}
+
+========================= Plant.java ==================================
+
+public class Plant {
+	
+	public void grow() {
+		System.out.println("Plant growing!");
+		
+	}
+}
+
+======================= Tree.java =======================================
+
+public class Tree extends Plant {
+
+	@Override
+	public void grow() {
+		System.out.println("Tree growing!");
+		
+	}
+	
+	public void shedLeaves() {
+		System.out.println("Leaves are falling.");
+		
+	
+	}
+}
